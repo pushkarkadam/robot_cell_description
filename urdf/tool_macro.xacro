@@ -42,5 +42,14 @@
             <child link="${prefix}${name}"/>
             <origin xyz="0 0 0.093" rpy="0 ${-pi/2} ${pi/2}"/>
         </joint>
+
+        <link name="${prefix}tip" />
+
+        <joint name="${prefix}${name}_to_tip" type="fixed">
+            <parent link="${prefix}${name}"/>
+            <child link="${prefix}tip"/>
+            <origin xyz="0.22 0 0.011" rpy="0 0.982 0"/>
+        </joint>
+
     </xacro:macro>
 </robot>
