@@ -23,14 +23,14 @@
                         and when imported in rviz, it thinks it is in meters.
                         Therefore, scaling down the pointer.
                     -->
-                    <mesh filename="package://robot_cell_description/meshes/pointer_v3.STL" scale="0.001 0.001 0.001"/>
+                    <mesh filename="package://robot_cell_description/meshes/pointer_v3-1.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="red"/>
                 <origin xyz="0 0 0" rpy="0 0 0"/>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://robot_cell_description/meshes/pointer_v3.STL" scale="0.001 0.001 0.001"/>
+                    <mesh filename="package://robot_cell_description/meshes/pointer_v3-1.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <origin xyz="0 0 0"/>
             </collision>
@@ -40,7 +40,7 @@
         <joint name="${prefix}${name}_to_gripper" type="fixed">
             <parent link="${parent}"/>
             <child link="${prefix}${name}"/>
-            <origin xyz="0 0 0.187" rpy="-${pi/2} 0 0"/>
+            <origin xyz="0 0 0.093" rpy="0 ${-pi/2} ${pi/2}"/>
         </joint>
     </xacro:macro>
 </robot>
