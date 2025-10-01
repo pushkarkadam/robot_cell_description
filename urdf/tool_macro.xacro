@@ -48,7 +48,7 @@
         <joint name="${prefix}${name}_to_tip" type="fixed">
             <parent link="${prefix}${name}"/>
             <child link="${prefix}tip"/>
-            <origin xyz="0.22 0 0.011" rpy="0 0.982 0"/>
+            <origin xyz="0.211 0 0" rpy="0 ${pi/3} 0"/>
         </joint>
 
     </xacro:macro>
