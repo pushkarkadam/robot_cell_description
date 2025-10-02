@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot name="tool" xmlns:xacro="https://ros.org/wiki/xacro">
+    <xacro:macro name="tool" params="
+        name
+        prefix 
+        parent">
+
+        <material name="red">
+            <color rgba="0.8 0 0 1"/>
+        </material>
+
+        <xacro:macro name="default_inertial" params="mass">
+            <inertial>
+                <mass value="${mass}"/>
+                <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+            </inertial>
+        </xacro:macro>
+        <link name="${prefix}${name}">
+            <visual>
+                <geometry>
+                    <!-- Using scale in the mesh file because 
+                        the STL file was created in millimeters
+                        and when imported in rviz, it thinks it is in meters.
+                        Therefore, scaling down the pointer.
+                    -->
+                    <mesh filename="package://robot_cell_description/meshes/pointer_v3-1.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+                <material name="red"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://robot_cell_description/meshes/pointer_v3-1.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+                <origin xyz="0 0 0"/>
+            </collision>
+            <xacro:default_inertial mass="0.5"/>
+        </link>
+
+        <joint name="${prefix}${name}_to_gripper" type="fixed">
+            <parent link="${parent}"/>
+            <child link="${prefix}${name}"/>
+            <origin xyz="0 0 0.093" rpy="0 ${-pi/2} ${pi/2}"/>
+        </joint>
+
+        <link name="${prefix}tip" />
+
+        <joint name="${prefix}${name}_to_tip" type="fixed">
+            <parent link="${prefix}${name}"/>
+            <child link="${prefix}tip"/>
+            <origin xyz="0.211 0 0" rpy="0 ${pi/3} 0"/>
+        </joint>
+
+    </xacro:macro>
+</robot>
