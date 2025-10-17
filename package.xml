@@ -2,10 +2,10 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>robot_cell_description</name>
-  <version>0.0.0</version>
+  <version>1.0.0</version>
   <description>UR robot cell description</description>
   <maintainer email="pushkarkadam17@outlook.com">Pushkar Kadam</maintainer>
-  <license>Apache-2.0</license>
+  <license>MIT</license>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
@@ -17,7 +17,6 @@
   <exec_depend>joint_state_publisher_gui</exec_depend>
   <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>ur_description</exec_depend>
-  <exec_depend>robotiq_description</exec_depend>
   <exec_depend>xacro</exec_depend>
   <exec_depend>rviz2</exec_depend>
 
