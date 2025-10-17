@@ -10,8 +10,8 @@ and this project adheres to `Semantic Versioning`_.
 .. _Semantic Versioning: https://semver.org/spec/v2.0.0.html
 
 
-[Unreleased]
-------------
+[1.0.0] - 2025-10-17
+--------------------
 
 Added
 ^^^^^
