@@ -6,7 +6,7 @@ package_name = 'robot_cell_description'
 
 setup(
     name=package_name,
-    version='0.0.0',
+    version='1.0.0',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -24,7 +24,7 @@ setup(
     maintainer='Pushkar Kadam',
     maintainer_email='pushkarkadam17@outlook.com',
     description='UR robot cell description',
-    license='Apache-2.0',
+    license='MIT',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
