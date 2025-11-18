@@ -40,7 +40,7 @@
         <joint name="${prefix}${name}_to_gripper" type="fixed">
             <parent link="${parent}"/>
             <child link="${prefix}${name}"/>
-            <origin xyz="0 0 0.093" rpy="0 ${-pi/2} ${pi/2}"/>
+            <origin xyz="0 0 0.11505" rpy="0 ${-pi/2} ${pi/2}"/>
         </joint>
 
         <link name="${prefix}tip" />
